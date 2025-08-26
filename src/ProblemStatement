@@ -1,0 +1,29 @@
+Parking System:
+
+Parking space has 10000 parking slots
+
+Parking slots can be of 3 types: Light, medium, heavy
+
+Light: under 200kg, 50rupees/hour
+Medium: 200 - 2000kgs, 100 rupees/hour
+Heavy: 2000kgs and above, 500 rupees/hour
+
+Vehicle: Car,Bike,Truck
+
+Each vehicle has Liscence Plate number, weight
+
+Parking has multiple Gates.
+
+Each gate is either Entry/Exit.
+
+Each vehicle that makes an entry gets a ticket.
+
+ticket: ID, Liscnce plate number, weight, entry gate, entry time, alloted parking slot number
+
+
+
+--------------------------------
+
+
+
+
