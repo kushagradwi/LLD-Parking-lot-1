@@ -13,33 +13,34 @@ public class PaymentService {
         this.scanner = scanner;
     }
 
-    public void PaymentMethod(int amount){
-        choosePaymentMethod(amount);
+    public Payment PaymentMethod(double amount){
+        return choosePaymentMethod(amount);
             }
         
-    private void choosePaymentMethod(int amount) {
-            System.out.println("Choose Payment method: 1. Cash 2. CreditCard 3. UPI");
-            
-            int input=scanner.nextInt();
-            Payment payment;
-            switch (input) {
-                case 1:
-                    payment= new Payment(amount, new CashPayment());
-                    break;
-                case 2:
-                    payment= new Payment(amount, new CreditCardPayment());
-                    break;
-                case 3:
-                    payment= new Payment(amount, new UPIPayment());
-                    break;    
-            
-                default:
-                    System.out.println("Invalid payment. Resolving to default as cash");
-                    payment= new Payment(amount, new CashPayment());
+    private Payment choosePaymentMethod(double amount) {
+                System.out.println("Choose Payment method: 1. Cash 2. CreditCard 3. UPI");
+                
+                int input=scanner.nextInt();
+                Payment payment;
+                switch (input) {
+                    case 1:
+                        payment= new Payment(amount, new CashPayment());
+                        break;
+                    case 2:
+                        payment= new Payment(amount, new CreditCardPayment());
+                        break;
+                    case 3:
+                        payment= new Payment(amount, new UPIPayment());
+                        break;    
+                
+                    default:
+                        System.out.println("Invalid payment. Resolving to default as cash");
+                        payment= new Payment(amount, new CashPayment());
                     break;
             }
             payment.processPayment();
-              
+            payment.setIsProcessed(true);
+            return payment;
             }
 
 }

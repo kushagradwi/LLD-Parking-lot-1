@@ -1,10 +1,18 @@
 package Models.Payment;
 
 public class Payment {
-    int amount;
+    double amount;
+    Boolean isProcessed;
+    public Boolean getIsProcessed() {
+        return isProcessed;
+    }
+    public void setIsProcessed(Boolean isProcessed) {
+        this.isProcessed = isProcessed;
+    }
     PaymentStratergy paymentStratergy;
-    public Payment(int amount, PaymentStratergy paymentStratergy) {
+    public Payment(double amount, PaymentStratergy paymentStratergy) {
         this.amount = amount;
+        this.isProcessed=false;
         this.paymentStratergy = paymentStratergy;
     }
     public void processPayment(){
